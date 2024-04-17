@@ -37,8 +37,6 @@ level=error msg="[linters_context] gocritic: load embedded ruleguard rules: rule
 По условиям ДЗ в том числе, файлы `.sync` лучше. 
 
 Задания: 
-- 1е задание. Корректный импорт вместо указанного в описании `golang.org/x/example/stringutil` - ["golang.org/x/example/hello/reverse"](import "golang.org/x/example/hello/reverse")
-   для выполнения задания используйте его, и будет вам счастье. 
 - 2е задание. Перед выполнением рекомендую почитать следующую статью - времени на прочтение минут 10, а может сэкономить вам несколько часов правок в последующем \
 [UTF-8 strings with Go: len(s) isn't enough](https://henvic.dev/posts/go-utf8/) \
 [Концепции рун](https://habr.com/ru/companies/piter/articles/767068/)
