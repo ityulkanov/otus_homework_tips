@@ -26,20 +26,20 @@ level=error msg="[linters_context] gocritic: load embedded ruleguard rules: rule
 funlen:
     lines: 150
     statements: 80
-  depguard:
-    rules:
-      Main:
-        files:
-          - $all
-          - "!$test"
-        allow:
-          - $gostd
-      Test:
-        files:
-          - $test
-        allow:
-          - $gostd
-          - github.com/stretchr/testify
+depguard:
+rules:
+  Main:
+    files:
+      - $all
+      - "!$test"
+    allow:
+      - $gostd
+  Test:
+    files:
+      - $test
+    allow:
+      - $gostd
+      - github.com/stretchr/testify
 ```
 
 ### Задания:
