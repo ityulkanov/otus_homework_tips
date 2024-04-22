@@ -19,6 +19,29 @@ level=error msg="[linters_context] gocritic: load embedded ruleguard rules: rule
 обычно означает что версия линтера не совпадает с версией go. Лечится изменением версии линтера до последней в `.github/workflows/tests.yml` файле. 
 вообще рекомендую вам поднять версии до go `1.22` а golang-ci lint до `v1.57.2` сразу. 
 
+Ошибка 
+`import 'github.com/stretchr/testify/require' is not allowed from list 'Main' (depguard)`
+Лечится настройкой depguard:
+```
+funlen:
+    lines: 150
+    statements: 80
+  depguard:
+    rules:
+      Main:
+        files:
+          - $all
+          - "!$test"
+        allow:
+          - $gostd
+      Test:
+        files:
+          - $test
+        allow:
+          - $gostd
+          - github.com/stretchr/testify
+```
+
 ### Задания:
 
 Во всех заданиях есть файл `go.mod` в котором изначально прописаны только шаблоны путей до ваших модулей ДЗ (так как у каждого будет свой репозиторий с проектом). 
