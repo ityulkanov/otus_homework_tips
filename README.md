@@ -1,5 +1,8 @@
 # ДЗ полезные советы
 
+### Общие рекомендации
+Перед написанием любого кода в Go рекомендую ознакомиться с [некоторыми его конвенциями](https://habr.com/ru/articles/441842/)
+
 ДЗ не обязательно выполнять по очереди (за исключением календаря). Тут как в тесте, можете выполнить
 те что считаете самыми лёгкими, возвращаясь к самым сложным позже, по 
 мере роста опыта и по мере прохождения курса. 
@@ -8,12 +11,12 @@
 
 Часть ошибок лечится простой командой: 
 
-```
+```bash
 golangci-lint run --fix
 ```
 
 Ошибка линтера 
-```go
+```golang
 level=error msg="[linters_context] gocritic: load embedded ruleguard rules: rules/rules.go:13: can't load fmt: setting an explicit GOROOT can fix this problem."
 ```
 обычно означает что версия линтера не совпадает с версией go. Лечится изменением версии линтера до последней в `.github/workflows/tests.yml` файле. 
@@ -22,7 +25,7 @@ level=error msg="[linters_context] gocritic: load embedded ruleguard rules: rule
 Ошибка 
 `import 'github.com/stretchr/testify/require' is not allowed from list 'Main' (depguard)`
 Лечится настройкой depguard:
-```
+```yaml
 funlen:
     lines: 150
     statements: 80
