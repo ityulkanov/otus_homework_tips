@@ -30,23 +30,20 @@ level=error msg="[linters_context] gocritic: load embedded ruleguard rules: rule
 `import 'github.com/stretchr/testify/require' is not allowed from list 'Main' (depguard)`
 Лечится настройкой depguard:
 ```yaml
-funlen:
-    lines: 150
-    statements: 80
 depguard:
-rules:
-  Main:
-    files:
-      - $all
-      - "!$test"
-    allow:
-      - $gostd
-  Test:
-    files:
-      - $test
-    allow:
-      - $gostd
-      - github.com/stretchr/testify
+    rules:
+      Main:
+        files:
+          - $all
+          - "!$test"
+        allow:
+          - $gostd
+      Test:
+        files:
+          - $test
+        allow:
+          - $gostd
+          - github.com/stretchr/testify
 ```
 Либо мьютом конкретной строки на которую ругается линтер: 
 ```
