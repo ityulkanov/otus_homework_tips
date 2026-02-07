@@ -1,0 +1,53 @@
+1) До оптимизации:
+
+=== RUN   TestGetDomainStat_Time_And_Memory
+    stats_optimization_test.go:46: time used: 438.027838ms / 300ms
+    stats_optimization_test.go:47: memory used: 308Mb / 30Mb
+    stats_optimization_test.go:49: 
+                Error Trace:    /home/admin1/Development/golang_homework/hw10_program_optimization/stats_optimization_test.go:49
+                Error:          "438027838" is not less than "300000000"
+                Test:           TestGetDomainStat_Time_And_Memory
+                Messages:       the program is too slow
+--- FAIL: TestGetDomainStat_Time_And_Memory (10.14s)
+FAIL
+exit status 1
+FAIL    github.com/AnastasiaDAmber/golang_homework/hw10_program_optimization    10.142s
+
+2) Первое улучшение
+
+=== RUN   TestGetDomainStat_Time_And_Memory
+    stats_optimization_test.go:46: time used: 307.824784ms / 300ms
+    stats_optimization_test.go:47: memory used: 276Mb / 30Mb
+    stats_optimization_test.go:49: 
+                Error Trace:    /home/admin1/Development/golang_homework/hw10_program_optimization/stats_optimization_test.go:49
+                Error:          "307824784" is not less than "300000000"
+                Test:           TestGetDomainStat_Time_And_Memory
+                Messages:       the program is too slow
+--- FAIL: TestGetDomainStat_Time_And_Memory (5.34s)
+FAIL
+exit status 1
+FAIL    github.com/AnastasiaDAmber/golang_homework/hw10_program_optimization    5.342s
+
+3) Ещё одно улучшение
+
+=== RUN   TestGetDomainStat_Time_And_Memory
+    stats_optimization_test.go:46: time used: 292.380774ms / 300ms
+    stats_optimization_test.go:47: memory used: 143Mb / 30Mb
+    stats_optimization_test.go:50: 
+                Error Trace:    /home/admin1/Development/golang_homework/hw10_program_optimization/stats_optimization_test.go:50
+                Error:          "150662720" is not less than "31457280"
+                Test:           TestGetDomainStat_Time_And_Memory
+                Messages:       the program is too greedy
+--- FAIL: TestGetDomainStat_Time_And_Memory (4.36s)
+FAIL
+exit status 1
+FAIL    github.com/AnastasiaDAmber/golang_homework/hw10_program_optimization    4.365s
+
+4) И ещё одно улучшение... и т.д.
+
+=== RUN   TestGetDomainStat_Time_And_Memory
+    stats_optimization_test.go:46: time used: 126.742405ms / 300ms
+    stats_optimization_test.go:47: memory used: 11Mb / 30Mb
+--- PASS: TestGetDomainStat_Time_And_Memory (1.44s)
+PASS
+ok      github.com/AnastasiaDAmber/golang_homework/hw10_program_optimization    1.442s
